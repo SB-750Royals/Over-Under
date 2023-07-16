@@ -1,93 +1,70 @@
+#include "api.h"
+#include "globals.h"
 #include "main.h"
+#include "driver.h"
 
-/**
- * A callback function for LLEMU's center button.
- *
- * When this callback is fired, it will toggle line 2 of the LCD text between
- * "I was pressed!" and nothing.
- */
-void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
-}
-
-/**
- * Runs initialization code. This occurs as soon as the program is started.
- *
- * All other competition modes are blocked by initialize; it is recommended
- * to keep execution time for this mode under a few seconds.
- */
-void initialize() {
+// LCD Code
+void initialize(){
+ 
 	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
+	pros::lcd::set_text(0, " 750Royals VignESH ");
+	pros::lcd::set_text(1, " Vignesh, Esha, Tejas, Abhaya ");
+    pros::lcd::set_text(2, " Anika, Rakshna ");
+	pros::lcd::set_text(3, " Arjun, Yegna, Vivek, Vihaan ");
+	pros::lcd::set_text(4, "  Hari, Nick , Anushree  ");
 
-	pros::lcd::register_btn1_cb(on_center_button);
+	start();
+	
+
 }
+
 
 /**
  * Runs while the robot is in the disabled state of Field Management System or
- * the VEX Competition Switch, following either autonomous or opcontrol. When
+ * the VEX Competition Switch, following either autonomous or opcontrol. When 
  * the robot is enabled, this task will exit.
  */
-void disabled() {}
+void disabled() {
+
+	// Clear all lines of the LCD
+	pros::lcd::clear_line(0);
+	pros::lcd::clear_line(1);
+	pros::lcd::clear_line(2);
+	pros::lcd::clear_line(3);
+	pros::lcd::clear_line(4);
+	pros::lcd::clear_line(5);
+	pros::lcd::clear_line(6);
+	pros::lcd::clear_line(7); 	
+
+	// Make the screen red and the text color black 
+	pros::lcd::set_background_color(255, 0, 0);
+	pros::lcd::set_text_color(0, 0, 0);
+
+	// Display Game Over
+	pros::lcd::set_text(0, "            750Royals           ");
+	pros::lcd::set_text(4, "            Disabled            ");
+}
 
 /**
- * Runs after initialize(), and before autonomous when connected to the Field
- * Management System or the VEX Competition Switch. This is intended for
- * competition-specific initialization routines, such as an autonomous selector
- * on the LCD.
- *
- * This task will exit when the robot is enabled and autonomous or opcontrol
- * starts.
+ * Autonomous Control Selection Mode & Pregame Setup
  */
-void competition_initialize() {}
+void competition_initialize() {
+	start();
+}
 
-/**
- * Runs the user autonomous code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the autonomous
- * mode. Alternatively, this function may be called in initialize or opcontrol
- * for non-competition testing purposes.
- *
- * If the robot is disabled or communications is lost, the autonomous task
- * will be stopped. Re-enabling the robot will restart the task, not re-start it
- * from where it left off.
- */
+
+/*
+*  Autonomous Code
+*/
 void autonomous() {}
 
-/**
- * Runs the operator control code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the operator
- * control mode.
- *
- * If no competition control is connected, this function will run immediately
- * following initialize().
- *
- * If the robot is disabled or communications is lost, the
- * operator control task will be stopped. Re-enabling the robot will restart the
- * task, not resume it from where it left off.
- */
+/
 void opcontrol() {
-	pros::Controller master(pros::E_CONTROLLER_MASTER);
-	pros::Motor left_mtr(1);
-	pros::Motor right_mtr(2);
+	start();
 
-	while (true) {
-		pros::lcd::print(0, "%d %d %d", (pros::lcd::read_buttons() & LCD_BTN_LEFT) >> 2,
-		                 (pros::lcd::read_buttons() & LCD_BTN_CENTER) >> 1,
-		                 (pros::lcd::read_buttons() & LCD_BTN_RIGHT) >> 0);
-		int left = master.get_analog(ANALOG_LEFT_Y);
-		int right = master.get_analog(ANALOG_RIGHT_Y);
+	while (true){
 
-		left_mtr = left;
-		right_mtr = right;
-
+		drive();     
 		pros::delay(20);
 	}
 }
