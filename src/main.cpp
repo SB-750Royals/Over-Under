@@ -15,7 +15,6 @@ void initialize(){
 
 	start();
 	
-
 }
 
 
@@ -65,6 +64,7 @@ void opcontrol() {
 	while (true){
 
 		drive();     
+		lift();
 		pros::delay(20);
 	}
 }

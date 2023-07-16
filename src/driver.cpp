@@ -87,4 +87,26 @@ void start(){
     left_back.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     left_front.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
+    lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+
+}
+
+/*
+ * Controls the lift mechanism based on the input from the controller.
+ * If the up button is pressed, the lift moves up at full speed (127).
+ * If the down button is pressed, the lift moves down at full speed (-127).
+ * If no button is pressed, the lift stops moving (0).
+ */
+void lift(){
+
+    if (controller.get_digital(DIGITAL_UP){
+        lift.move(127);
+    }
+    else if (controller.get_digital(DIGITAL_DOWN){
+        lift.move(-127);
+    }
+    else{
+        lift.move(0);
+    }
+
 }

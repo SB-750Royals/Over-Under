@@ -11,3 +11,4 @@ int curve_controls(int value);
 // Subsystems
 void start();
 void drive();
+void lift();
