@@ -14,3 +14,5 @@ extern pros::MotorGroup left_drive;
 extern pros::MotorGroup right_drive;
 
 extern pros::Motor lift;
+
+extern pros::Motor side_roller;

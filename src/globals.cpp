@@ -18,3 +18,7 @@ pros::MotorGroup right_drive({right_back, right_front});
 
 // Lift
 pros::Motor lift(8, pros::E_MOTOR_GEAR_600 , false, pros::E_MOTOR_ENCODER_COUNTS);
+
+
+// Side Roller
+pros::Motor side_roller(9, pros::E_MOTOR_GEAR_200 , false, pros::E_MOTOR_ENCODER_COUNTS);

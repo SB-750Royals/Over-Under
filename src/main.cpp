@@ -65,6 +65,7 @@ void opcontrol() {
 
 		drive();     
 		lift();
+		side_roller();
 		pros::delay(20);
 	}
 }

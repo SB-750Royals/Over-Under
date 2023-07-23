@@ -110,3 +110,19 @@ void lift(){
     }
 
 }
+
+
+void side_roller(){
+
+    if (controller.get_digital(DIGITAL_R1){
+        side_roller.move_velocity(200);
+    }
+    else if (controller.get_digital(DIGITAL_R2){
+        side_roller.move_velocity(-200);
+    }
+    else{
+        side_roller.move(0);
+    }
+
+}
+
