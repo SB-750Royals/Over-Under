@@ -12,4 +12,4 @@ int curve_controls(int value);
 void start();
 void drive();
 void lift();
-void side_roller();
+void top_roller();

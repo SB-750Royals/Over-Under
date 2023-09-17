@@ -111,17 +111,22 @@ void lift(){
 
 }
 
+/*
+ * Controls the side roller mechanism based on the input from the controller.
+ * If the right button is pressed, the side roller moves inwards at full speed (127).
+ * If the left button is pressed, the side roller moves outwards at full speed (-127).
+ * If no button is pressed, the side roller stops moving (0).
+ */
+void top_roller(){
 
-void side_roller(){
-
-    if (controller.get_digital(DIGITAL_R1){
-        side_roller.move_velocity(200);
+    if (controller.get_digital(DIGITAL_L1){
+        top_roller.move_velocity(200);
     }
-    else if (controller.get_digital(DIGITAL_R2){
-        side_roller.move_velocity(-200);
+    else if (controller.get_digital(DIGITAL_L2){
+        top_roller.move_velocity(-200);
     }
     else{
-        side_roller.move(0);
+        top_roller.move(0);
     }
 
 }

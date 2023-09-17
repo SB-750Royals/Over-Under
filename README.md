@@ -15,7 +15,7 @@ This is our code for the 2023-2024 Vex OverUnder game. We are using Pros with VS
 | 4     |                         | 11    |                     |
 | 5     | Throttle                | 12    |                     |
 | 6     | Turn                    | 13    |                     |
-| 7     | Lift Up                 | 14    | Side Roller         |
+| 7     | Lift Up                 | 14    | Top Roller          |
 
 ## Ports
 | Port | Device         | Port | Device         |
