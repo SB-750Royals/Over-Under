@@ -13,3 +13,4 @@ void start();
 void drive();
 void lift();
 void top_roller();
+void catapult();

@@ -16,3 +16,5 @@ extern pros::MotorGroup right_drive;
 extern pros::Motor lift;
 
 extern pros::Motor top_roller;
+
+extern pros::Motor catapult;

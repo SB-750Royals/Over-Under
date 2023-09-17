@@ -12,7 +12,7 @@ This is our code for the 2023-2024 Vex OverUnder game. We are using Pros with VS
 | 1     |                         | 8     | Lift Down           |
 | 2     |                         | 9     |                     |
 | 3     |                         | 10    |                     |
-| 4     |                         | 11    |                     |
+| 4     |                         | 11    | Catapult            |
 | 5     | Throttle                | 12    |                     |
 | 6     | Turn                    | 13    |                     |
 | 7     | Lift Up                 | 14    | Top Roller          |
@@ -28,8 +28,8 @@ This is our code for the 2023-2024 Vex OverUnder game. We are using Pros with VS
 | 6    | right_front    | 16   |                |
 | 7    | right_back     | 17   |                |
 | 8    | lift           | 18   |                |
-| 9    | Side Roller    | 19   |                |
-| 10   | radio          | 20   |                |
+| 9    | Top Roller     | 19   |                |
+| 10   | Catapult       | 20   | radio          |
 | A    |                | B    |                |
 | C    |                | D    |                |
 | E    |                | F    |                |

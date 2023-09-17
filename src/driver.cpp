@@ -17,6 +17,7 @@ const int deadZoneValue = 10;
  * Computer Side Variables - Do not modify
 */ 
 bool handBrake = false
+bool cataOn = false;
 
 
 /**
@@ -127,6 +128,30 @@ void top_roller(){
     }
     else{
         top_roller.move(0);
+    }
+
+}
+
+/*
+ * Controls the catapult mechanism based on the input from the controller.
+ * If the right button is pressed, the catapult moves inwards at full speed (127).
+ * If the left button is pressed, the catapult moves outwards at full speed (-127).
+ * If no button is pressed, the catapult stops moving (0).
+ */
+void catapult(){
+
+    if (controller.get_digital(DIGITAL_R1){
+        cataOn = true;
+    }
+    else if (controller.get_digital(DIGITAL_R2){
+        cataOn = false;
+    }
+
+    if (cataOn){
+        cata.move_velocity(200);
+    }
+    else{
+        cata.move_velocity(0);
     }
 
 }
