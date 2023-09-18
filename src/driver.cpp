@@ -88,8 +88,6 @@ void start(){
     left_back.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     left_front.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
 
-    lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
-
 }
 
 /*
