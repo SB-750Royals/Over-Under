@@ -9,13 +9,13 @@ This is our code for the 2023-2024 Vex OverUnder game. We are using Pros with VS
 
 | Input | Output                  | Input | Output              |
 |-------|-------------------------|-------|---------------------|
-| 1     |                         | 8     | Lift Down           |
-| 2     |                         | 9     |                     |
+| 1     | Roller Out              | 8     |                     |
+| 2     | Roller In               | 9     | Lift Down           |
 | 3     |                         | 10    |                     |
 | 4     |                         | 11    | Catapult            |
 | 5     | Throttle                | 12    |                     |
 | 6     | Turn                    | 13    |                     |
-| 7     | Lift Up                 | 14    | Top Roller          |
+| 7     | Lift Up                 | 14    | Flaps Toggle        |
 
 ## Ports
 | Port | Device         | Port | Device         |

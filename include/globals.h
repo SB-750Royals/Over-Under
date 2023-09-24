@@ -18,3 +18,6 @@ extern pros::Motor lift;
 extern pros::Motor top_roller;
 
 extern pros::Motor catapult;
+
+extern pros::ADIDigitalIn flap1;
+extern pros::ADIDigitalIn flap2;
