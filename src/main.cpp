@@ -65,7 +65,7 @@ void opcontrol() {
 
 		drive();     
 		lift();
-		top_roller();
+		trap_take();
 		catapult();
 		flaps();
 		pros::delay(20);

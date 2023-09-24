@@ -116,19 +116,19 @@ void lift()
  * If the left button is pressed, the side roller moves outwards at full speed (-127).
  * If no button is pressed, the side roller stops moving (0).
  */
-void top_roller()
-{
+// void top_roller()
+// {
 
-    if (controller.get_digital(DIGITAL_L1){
-        top_roller.move_velocity(200);
-    }
-    else if (controller.get_digital(DIGITAL_L2){
-        top_roller.move_velocity(-200);
-    }
-    else{
-        top_roller.move(0);
-    }
-}
+//     if (controller.get_digital(DIGITAL_L1){
+//         top_roller.move_velocity(200);
+//     }
+//     else if (controller.get_digital(DIGITAL_L2){
+//         top_roller.move_velocity(-200);
+//     }
+//     else{
+//         top_roller.move(0);
+//     }
+// }
 
 /*
  * Controls the catapult mechanism based on the input from the controller.
@@ -171,5 +171,19 @@ void flaps()
     }
     else{
         flaps.move_velocity(0);
+    }
+}
+
+
+void trapTake()
+{
+    if (controller.get_digital(DIGITAL_L1){
+        trap_take.move_velocity(200);
+    }
+    else if (controller.get_digital(DIGITAL_L2){
+        trap_take.move_velocity(-200);
+    }
+    else{
+        trap_take.move(0);
     }
 }

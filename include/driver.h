@@ -12,6 +12,6 @@ int curve_controls(int value);
 void start();
 void drive();
 void lift();
-void top_roller();
 void catapult();
 void flaps();
+void trapTake();
