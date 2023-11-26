@@ -116,19 +116,19 @@ void lift()
  * If the left button is pressed, the side roller moves outwards at full speed (-127).
  * If no button is pressed, the side roller stops moving (0).
  */
-// void top_roller()
-// {
+void top_roller()
+{
 
-//     if (controller.get_digital(DIGITAL_L1){
-//         top_roller.move_velocity(200);
-//     }
-//     else if (controller.get_digital(DIGITAL_L2){
-//         top_roller.move_velocity(-200);
-//     }
-//     else{
-//         top_roller.move(0);
-//     }
-// }
+    if (controller.get_digital(DIGITAL_L1){
+        top_roller.move_velocity(200);
+    }
+    else if (controller.get_digital(DIGITAL_L2){
+        top_roller.move_velocity(-200);
+    }
+    else{
+        top_roller.move(0);
+    }
+}
 
 /*
  * Controls the catapult mechanism based on the input from the controller.
@@ -174,16 +174,20 @@ void flaps()
     }
 }
 
-
-void trapTake()
-{
-    if (controller.get_digital(DIGITAL_L1){
-        trap_take.move_velocity(200);
-    }
-    else if (controller.get_digital(DIGITAL_L2){
-        trap_take.move_velocity(-200);
-    }
-    else{
-        trap_take.move(0);
-    }
-}
+/*
+ * Controls the trap take mechanism based on the input from the controller.
+ * If the L1 button is pressed, the trap take moves inwards at full speed (200). 
+ * If the L2 button is pressed, the trap take moves outwards at full speed (-200).
+*/
+// void trapTake()
+// {
+//     if (controller.get_digital(DIGITAL_L1){
+//         trap_take.move_velocity(200);
+//     }
+//     else if (controller.get_digital(DIGITAL_L2){
+//         trap_take.move_velocity(-200);
+//     }
+//     else{
+//         trap_take.move(0);
+//     }
+// }

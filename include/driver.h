@@ -14,4 +14,4 @@ void drive();
 void lift();
 void catapult();
 void flaps();
-void trapTake();
+void top_roller();
