@@ -5,7 +5,7 @@ This is our code for the 2023-2024 Vex OverUnder game. We are using Pros with VS
 </p>
 
 ## Controller Mapping
-![Controller Map](https://raw.githubusercontent.com/SB-750Royals/Over-Under-Main/main/Images/img.png?token=GHSAT0AAAAAACJ6T3ZG7WK2HGU5WOJ3VNKOZM4EUPA)
+![Controller Map](https://raw.githubusercontent.com/SB-750Royals/Over-Under-Main/main/Images/Controller.png?token=GHSAT0AAAAAACJ6T3ZHVFOJPD4WMD4WP4UYZOPSWZQ)
 
 | Input | Output                  | Input | Output              |
 |-------|-------------------------|-------|---------------------|

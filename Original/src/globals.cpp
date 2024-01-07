@@ -29,3 +29,6 @@ pros::Motor catapult(10, pros::E_MOTOR_GEAR_600 , false, pros::E_MOTOR_ENCODER_C
 // Flaps
 pros::ADIDigitalIn flap1('A');
 pros::ADIDigitalIn flap2('B');
+
+// Inertial 
+pros::Imu inertial(11);

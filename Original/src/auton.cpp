@@ -2,10 +2,9 @@
 #include "pros/motors.h"
 #include "autonmethods.h"
 
-
 // Constants
-const int TIME_TO_EXTEND_LIFT = 1200;  //TODO: Change Delay
-const int TIME_TO_MATCH_LOAD = 32 * 1000;  //TODO: Change Delay
+const int TIME_TO_EXTEND_LIFT = 1200;     // TODO: Change Delay
+const int TIME_TO_MATCH_LOAD = 32 * 1000; // TODO: Change Delay
 const double MOVE_CONSTANT = 4;
 const double TURN_CONSTANT = 2.45;
 const double PI = 3.1415926;
@@ -18,19 +17,21 @@ const double TURN_MAX = 350.0;
 const double TURN_MIN = 100.0;
 
 // Routes
-void tuning() {
+void tuning()
+{
   move(36.0, 3);
   pros::delay(2000);
   turn(90.0);
 }
 
-void programming_skills() {
+void programming_skills()
+{
 
   // Declarations
-  pros::Motor left_lift(13, pros::E_MOTOR_GEAR_100 , false, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor right_lift(20, pros::E_MOTOR_GEAR_100 , true, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor catapult(14, pros::E_MOTOR_GEAR_100 , true,   pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor roller(11, pros::E_MOTOR_GEAR_600 , true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor left_lift(13, pros::E_MOTOR_GEAR_100, false, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor right_lift(20, pros::E_MOTOR_GEAR_100, true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor catapult(14, pros::E_MOTOR_GEAR_100, true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor roller(11, pros::E_MOTOR_GEAR_600, true, pros::E_MOTOR_ENCODER_COUNTS);
 
   // Hold Motors
   left_lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
@@ -48,12 +49,13 @@ void programming_skills() {
 
   int initialTime = pros::millis();
   // Move Catapult for Match Loading
-  while(pros::millis() < TIME_TO_MATCH_LOAD + initialTime) {
-     catapult.move(127);
+  while (pros::millis() < TIME_TO_MATCH_LOAD + initialTime)
+  {
+    catapult.move(127);
   }
 
   // Stop Catapult and Lower Lift
-  catapult.move(0); 
+  catapult.move(0);
   right_lift.move(-127);
   left_lift.move(-127);
   pros::delay(TIME_TO_EXTEND_LIFT);
@@ -64,10 +66,10 @@ void programming_skills() {
 
   // Move away from wall
   move(7.5, 1.5);
-  
+
   // Turn to face the wall
   turn(110);
-  
+
   // Move to the wall
   move(9.0, 1.5);
 
@@ -80,30 +82,28 @@ void programming_skills() {
   // Move to the other side of the field
   move(37.5, 4.0);
 
-   // Turn to face the goal
+  // Turn to face the goal
   turn(-20);
 
   // Move forward to align with goal
   move(8.0, 1.0);
 
   // Score Triballs
-  move(12.5, 1.5);  
+  move(12.5, 1.5);
 
   turn(-40);
 
   move(10, 1.5);
-
 }
 
-void close_autonomous_1(){
-
+void close_autonomous_1()
+{
 
   // Declarations
-  pros::Motor left_lift(13, pros::E_MOTOR_GEAR_100 , false, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor right_lift(20, pros::E_MOTOR_GEAR_100 , true, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor catapult(16, pros::E_MOTOR_GEAR_100 , true,   pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor roller(11, pros::E_MOTOR_GEAR_600 , true, pros::E_MOTOR_ENCODER_COUNTS);
-
+  pros::Motor left_lift(13, pros::E_MOTOR_GEAR_100, false, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor right_lift(20, pros::E_MOTOR_GEAR_100, true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor catapult(16, pros::E_MOTOR_GEAR_100, true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor roller(11, pros::E_MOTOR_GEAR_600, true, pros::E_MOTOR_ENCODER_COUNTS);
 
   move(-12.0);
   turn(-45.0);
@@ -116,7 +116,7 @@ void close_autonomous_1(){
 
   // Move away from wall
   move(15.0);
-  
+
   turn(-90.0);
 
   move(24.0);
@@ -132,14 +132,15 @@ void close_autonomous_1(){
   pros::delay(TIME_TO_EXTEND_LIFT);
 }
 
-void far_autonomous_1(){
+void far_autonomous_1()
+{
 
   // Delcare Lift/Roller Motors + Piston
-  pros::Motor right_lift(13, pros::E_MOTOR_GEAR_600 , true, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor left_lift(20, pros::E_MOTOR_GEAR_600 , false, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor right_lift(13, pros::E_MOTOR_GEAR_600, true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor left_lift(20, pros::E_MOTOR_GEAR_600, false, pros::E_MOTOR_ENCODER_COUNTS);
   pros::MotorGroup lift_motors({left_lift, right_lift});
-  pros::Motor left_roller(3, pros::E_MOTOR_GEAR_600 , false, pros::E_MOTOR_ENCODER_COUNTS);
-  pros::Motor right_roller(8, pros::E_MOTOR_GEAR_600 , true, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor left_roller(3, pros::E_MOTOR_GEAR_600, false, pros::E_MOTOR_ENCODER_COUNTS);
+  pros::Motor right_roller(8, pros::E_MOTOR_GEAR_600, true, pros::E_MOTOR_ENCODER_COUNTS);
   pros::MotorGroup roller_motors({left_roller, right_roller});
 
   // TODO: Code AWP far autonomous here. Use move(), turn(), and above motors
@@ -190,6 +191,59 @@ void far_autonomous_1(){
 
   // Pushes triballs into goal with side flaps
   move(20.0);
-
 }
- 
+
+void close_auton_2()
+{
+  turnIntegral(45);
+  moveIntegral(-36.0);
+  moveIntegral(36.0);
+  turnIntegral(-45);
+  moveIntegral(36.0);
+  turnIntegral(45);
+  moveIntegral(40.0);
+}
+
+void far_auton_2()
+{
+  moveIntegral(36.0);
+  turnIntegral(45);
+  moveIntegral(12.0);
+  moveIntegral(-12.0);
+  turnIntegral(-45);
+  moveIntegral(40.0);
+  turnIntegral(135);
+  moveIntegral(12.0);
+  turnIntegral(-45);
+  moveIntegral(12.0);
+  turnIntegral(180);
+  moveIntegral(12.0);
+  turnIntegral(180);
+  moveIntegral(40);
+}
+
+void programming_skills_2()
+{
+  moveIntegral(5.0);
+  turnIntegral(45);
+  moveIntegral(12.0);
+  moveIntegral(-90.0);
+  moveIntegral(90.0);
+  turnIntegral(-45);
+  moveIntegral(12.0);
+  turnIntegral(45);
+  moveIntegral(40.0);
+  moveIntegral(-40.0);
+  turnIntegral(-45);
+  moveIntegral(40.0);
+  turnIntegral(135);
+  moveIntegral(12.0);
+  turnIntegral(-45);
+  moveIntegral(12.0);
+  turnIntegral(180);
+  moveIntegral(12.0);
+  turnIntegral(-45);
+  moveIntegral(12.0);
+  turnIntegral(90);
+  moveIntegral(12.0);
+}
