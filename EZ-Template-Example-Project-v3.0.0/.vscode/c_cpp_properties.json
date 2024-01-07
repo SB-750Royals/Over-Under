@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "name": "PROS Project",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "c:\\Users\\Vigne\\Downloads\\EZ-Template-Example-Project-v3.0.0\\include",
+        "c:\\Users\\Vigne\\OneDrive\\Documents\\Programing Master\\Robotics\\Over Under\\EZ-Template-Example-Project-v3.0.0\\include"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "C:\\Program Files\\PROS\\toolchain\\usr\\bin\\arm-none-eabi-g++",
+      "cStandard": "gnu11",
+      "cppStandard": "gnu++20",
+      "intelliSenseMode": "gcc-arm",
+      "compileCommands": "c:\\Users\\Vigne\\OneDrive\\Documents\\Programing Master\\Robotics\\Over Under\\EZ-Template-Example-Project-v3.0.0\\compile_commands.json",
+      "browse": {
+        "path": [
+          "c:\\Users\\Vigne\\OneDrive\\Documents\\Programing Master\\Robotics\\Over Under\\EZ-Template-Example-Project-v3.0.0"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+      }
+    }
+  ],
+  "version": 4
+}
